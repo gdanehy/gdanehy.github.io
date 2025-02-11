@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, intial-scale=1">
+    
+    <title>Georgia Danehy</title>
+    <meta name="description" content="Georgia Danehy Resume and Portfolio">
+    <link rel="stylesheet" href="/assets/styles.css"></head>
+<body><input class="dark-mode-checkbox sr-only" id="dark-mode" type="checkbox">
+<input class="typo-plus-checkbox sr-only" id="typo-plus" type="checkbox">
+<input class="typo-dys-checkbox sr-only" id="typo-dys" type="checkbox">
+<div class="theme-container grow">
+<header>
+    <div class="site_title" role="heading" aria-level="1">
+      <a href="/" class="site-title">
+        Georgia Danehy
+      </a>
+    </div>
+  <nav>
+      
+      
+        
+      
+        
+            <a href="/about/" class="pages_links">
+              <span class="pages_names">About Me</span>
+            </a>
+        
+      
+        
+      
+        
+            <a href="/projects/" class="pages_links">
+              <span class="pages_names">Projects</span>
+            </a>
+        
+      
+        
+            <a href="/resume/" class="pages_links">
+              <span class="pages_names">Resume</span>
+            </a>
+        
+      
+        
+      
+        
+      
+  </nav>
+  <div class="site_functions">
+    
+    
+  </div>
+</header>
+<main class="page_content" aria-label="Content">
+      
+    <article> 
+  <h1 id="wifi-sensing-literature-review">Wifi Sensing Literature Review</h1>
+<p>The following is a presentation I gave to my research group on wifi sensing.</p>
+
+<h1 id="a-review-of-deep-learning-and-its-applications-to-wifi-human-sensing">A review of Deep Learning and Its Applications to WiFi Human Sensing</h1>
+<h2 id="the-paper">The Paper</h2>
+<p>Deep learning and its applications to WiFi human sensing: A benchmark and a tutorial
+Submitted on 16 July 2022, last revised 16 December 2022
+J. Yang et. al. 
+Nanyang Technological University in Singapore</p>
+
+<h2 id="what-is-wi-fi-sensing">What is Wi-Fi sensing</h2>
+<p>Also called WLAN Sensing
+Analyzing the patterns of wireless signals in the form of Channel State Information
+Analogous to using WiFi for Radar</p>
+
+<h2 id="use-cases">Use Cases</h2>
+<p>Device Free Human detection:
+occupancy detection
+activity recognition
+fall detection
+gesture recognition
+human identification
+people counting
+More privacy friendly than cameras</p>
+
+<h2 id="ieee-80211bf">IEEE 802.11bf</h2>
+<p>New wi-fi standard incorporating WiFi sensing in regular WiFi service
+Currently under production, 2024 release date</p>
+
+<h2 id="current-wi-fi-sensing-methods">Current Wi-Fi sensing methods:</h2>
+<h3 id="model-based">Model Based</h3>
+<p>Physical models that describe the WiFi signals propagation
+Works well for sensing single motions</p>
+<ul>
+  <li>Breathing</li>
+  <li>Falling down</li>
+  <li>Occupancy detection
+Origin WiFi? (Company that is trying to commercialize the technology)
+    <h3 id="learning-based">Learning Based</h3>
+    <p>Able to perform complicated sensing tasks</p>
+  </li>
+  <li>Gesture recognition</li>
+  <li>Keystroke recognition</li>
+  <li>activity recognition</li>
+  <li>human identification</li>
+  <li>people counting
+Require large amounts of labeled data</li>
+  <li>Expensive</li>
+  <li>Environment Dependent</li>
+</ul>
+
+<h2 id="channel-state-information">Channel State Information</h2>
+<p>Describes how a signal propagates from the transmitter to the receiver
+WiFi Access points usually have multiple antennas and subcarriers
+CSI describes the phase shift of multi-path and amplitude attenuation on each subcarrier for a pair of transmitter and receiver antennas
+CSI data has better resolutions for sensing compared to received signal strength</p>
+
+<h2 id="collecting-csi-data">Collecting CSI Data</h2>
+<p>There are a number of tools available to collect CSI data</p>
+<ul>
+  <li>Some commonly used are the Intel 5300 NIC, Atheros CSI Tool, and Nexmon CSI Tool</li>
+  <li>CSI tools are WiFi chip specific
+I found a library called CSIkit that supports the following hardware:</li>
+  <li>Qualcomm Atheros 802.11n Chipsets</li>
+  <li>Intel IWL5300</li>
+  <li>Broadcom BCM4358, BCM43455c0, BCM4366c0</li>
+  <li>ESP32 via ESP32-CSI-Tool
+This could be a good place to add to the field - develop software to extract CSI data from different sources</li>
+</ul>
+
+<h2 id="csi-data-processing">CSI Data processing</h2>
+<p>CSI data consists of a vector of complex number including the amplitude and phase
+The most common methodologies are:</p>
+<ul>
+  <li>Only use the amplitude data as input - most common</li>
+  <li>Use the CSI difference between antennas
+    <ul>
+      <li>Used in model based methods</li>
+      <li>Requires clean data</li>
+    </ul>
+  </li>
+  <li>Use the processed Doppler representation of CSI.
+    <ul>
+      <li>eliminates the environmental dependency</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="how-human-activities-affect-csi">How Human Activities Affect CSI</h2>
+<p>CSI data for human sensing is composed of two dimensions: the subcarrier and the packet number
+Each packet and the associated subcarrier information represent a “CSI Image”, a series of these represent a “CSI Video”
+CSI Videos can describe human activity patterns</p>
+<ul>
+  <li>Subcarrier dimension → spatial features
+    <ul>
+      <li>Pixels, convolutional layers</li>
+    </ul>
+  </li>
+  <li>Time dimension → temporal features
+    <ul>
+      <li>Can be modeled by recurrent neural networks</li>
+    </ul>
+  </li>
+  <li>Antenna dimension → resolution and channel features
+    <ul>
+      <li>similar to RGB channels of an image</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="deep-learning-methods">Deep Learning methods</h2>
+<p>Mostly Supervised Learning
+More research is needed in unsupervised learning, it is promising in producing more generalized models</p>
+
+<h2 id="recommended-future-directions">Recommended Future Directions</h2>
+
+<p>Data-efficient learning
+Model compression or lightweight model design</p>
+<ul>
+  <li>Important for real-time processing
+Multi-modal learning</li>
+  <li>Integrating WiFi sensing and visual recognition
+Cross-modal learning</li>
+  <li>reconstruct one modality from another modality
+Model robustness and security for trustworthy sensing</li>
+  <li>Protect privacy and against adversarial attacks
+Complicated human activities and behaviors analytics</li>
+</ul>
+
+
+
+<div class="post_footer">
+  <h2 class="list_post_info">
+      09 February 2023
+  </h2>
+</div>
+  <div class="line"></div>
+</article>
+
+
+    </main>      <footer>
+        
+      </footer>
+    </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const checkbox = document.querySelector('.dark-mode-checkbox');
+
+  checkbox.checked = localStorage.getItem('darkMode') === 'true';
+
+  checkbox.addEventListener('change', function (event) {
+    localStorage.setItem('darkMode', event.currentTarget.checked);
+  });
+});
+
+  document.addEventListener('DOMContentLoaded', function () {
+  const checkbox = document.querySelector('.typo-plus-checkbox');
+
+  checkbox.checked = localStorage.getItem('typoPlus') === 'true';
+
+  checkbox.addEventListener('change', function (event) {
+    localStorage.setItem('typoPlus', event.currentTarget.checked);
+  });
+});
+
+    document.addEventListener('DOMContentLoaded', function () {
+  const checkbox = document.querySelector('.typo-dys-checkbox');
+
+  checkbox.checked = localStorage.getItem('typoDys') === 'true';
+
+  checkbox.addEventListener('change', function (event) {
+    localStorage.setItem('typoDys', event.currentTarget.checked);
+  });
+});
+</script>
+</body>
+</html>

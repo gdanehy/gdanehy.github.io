@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, intial-scale=1">
+    
+    <title>Georgia Danehy</title>
+    <meta name="description" content="Georgia Danehy Resume and Portfolio">
+    <link rel="stylesheet" href="/assets/styles.css"></head>
+<body><input class="dark-mode-checkbox sr-only" id="dark-mode" type="checkbox">
+<input class="typo-plus-checkbox sr-only" id="typo-plus" type="checkbox">
+<input class="typo-dys-checkbox sr-only" id="typo-dys" type="checkbox">
+<div class="theme-container grow">
+<header>
+    <div class="site_title" role="heading" aria-level="1">
+      <a href="/" class="site-title">
+        Georgia Danehy
+      </a>
+    </div>
+  <nav>
+      
+      
+        
+      
+        
+            <a href="/about/" class="pages_links">
+              <span class="pages_names">About Me</span>
+            </a>
+        
+      
+        
+      
+        
+            <a href="/projects/" class="pages_links">
+              <span class="pages_names">Projects</span>
+            </a>
+        
+      
+        
+            <a href="/resume/" class="pages_links">
+              <span class="pages_names">Resume</span>
+            </a>
+        
+      
+        
+      
+        
+      
+  </nav>
+  <div class="site_functions">
+    
+    
+  </div>
+</header>
+<main class="page_content" aria-label="Content">
+      
+    <article> 
+  <h1 id="le-chord---spring-2023-update">Le Chord - Spring 2023 update</h1>
+
+<p><img src="/assets/images/LeChord/LeChordFinished.png" /></p>
+
+<h2 id="project-overview">Project Overview</h2>
+<p>The goal of this project is to make our own version of the Suzuki Omnichord. We used the “Le Strum” DIY midi controller as the base of our instrument and then used open-source software on a raspberry pi to output sound. For finishing touches, we are building an enclosure and putting together circuitry to form a cohesive instrument. We are also designing a web interface to sample sounds to make custom sound fonts to be used on the instrument,</p>
+
+<h2 id="project-details">Project Details</h2>
+<p>The starting point for the project, the Le-Strum, is an open source midi controller, which acts as a digital input for the creation of music, similar to a computer keyboard. The midi controller came as a kit of parts that we had to solder together. For most of the team members this was their first time soldering so we took this opportunity as an educational experience to learn more about soldering. Being open source, the lestrum is built for hacking. For fall showcase we had just the stock LeStrum, but for our final product we remapped the buttons and strings onto our instrument for a more professional look. 
+<img src="/assets/images/LeChord/lestrum.png" /></p>
+
+<p>To make an instrument using a midi controller we needed to find a way to take those signals sent by the controller and turn them into sound. We initially did this using a raspberry pi and the Headless Pi Synth library. This software worked pretty well once everything was up and running, however, getting the raspberry pi connected to the internet and starting the software was challenging.<br />
+After much frustration we ended up switching to an Electrosmith daisy seed, an embedded platform for music! The Breakout board (called the pod) has a 3.5mm stereo jack for TRS MIDI input and Built In headphone amplifier with dedicated volume control. It is also Open Source and Programmable in C++
+<img src="/assets/images/LeChord/DaisyPod.png" /></p>
+
+<p>For the design of our instrument, we ultimately went with a heart-shaped autoharp-inspired casing. The first iteration of the case has been 3D-printed. We are using this to figure out the spacing of the electronic components and find any kinks in our design. Once we figured everything out we built a new enclosure out of wood using a laser cutter.</p>
+
+<p><img src="/assets/images/LeChord/LeChordCad.png" />
+<img src="/assets/images/LeChord/prororypeCad.png" /></p>
+
+
+<div class="post_footer">
+  <h2 class="list_post_info">
+      28 March 2023
+  </h2>
+</div>
+  <div class="line"></div>
+</article>
+
+
+    </main>      <footer>
+        
+      </footer>
+    </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const checkbox = document.querySelector('.dark-mode-checkbox');
+
+  checkbox.checked = localStorage.getItem('darkMode') === 'true';
+
+  checkbox.addEventListener('change', function (event) {
+    localStorage.setItem('darkMode', event.currentTarget.checked);
+  });
+});
+
+  document.addEventListener('DOMContentLoaded', function () {
+  const checkbox = document.querySelector('.typo-plus-checkbox');
+
+  checkbox.checked = localStorage.getItem('typoPlus') === 'true';
+
+  checkbox.addEventListener('change', function (event) {
+    localStorage.setItem('typoPlus', event.currentTarget.checked);
+  });
+});
+
+    document.addEventListener('DOMContentLoaded', function () {
+  const checkbox = document.querySelector('.typo-dys-checkbox');
+
+  checkbox.checked = localStorage.getItem('typoDys') === 'true';
+
+  checkbox.addEventListener('change', function (event) {
+    localStorage.setItem('typoDys', event.currentTarget.checked);
+  });
+});
+</script>
+</body>
+</html>

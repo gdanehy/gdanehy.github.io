@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-02-11T12:40:19-08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Georgia Danehy</title><subtitle>Georgia Danehy Resume and Portfolio</subtitle><entry><title type="html">Booch Bot</title><link href="http://localhost:4000/projects/2024/05/05/BoochBot.html" rel="alternate" type="text/html" title="Booch Bot" /><published>2024-05-05T00:00:00-07:00</published><updated>2024-05-05T00:00:00-07:00</updated><id>http://localhost:4000/projects/2024/05/05/BoochBot</id><content type="html" xml:base="http://localhost:4000/projects/2024/05/05/BoochBot.html">&lt;h1 id=&quot;booch-bot---a-capstone-project&quot;&gt;Booch Bot - a capstone project&lt;/h1&gt;
+&lt;p&gt;For my electrical engineering capstone class we were tasked with making a device to make someones life better in some way. This was a very broad topic, which gave us a lot of creative freedom in deciding what we would build. My group decided we wanted to make a Kombucha brewing system.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Booch_Bot/Booch_Demo.jpeg&quot; alt=&quot;Schematic&quot; title=&quot;Schematic&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The following is the final report for the class:&lt;/p&gt;
+
+&lt;h2 id=&quot;problem-description&quot;&gt;Problem Description&lt;/h2&gt;
+&lt;p&gt;Kombucha is a fermented drink that has been around for thousands of years but only gained popularity in the United States over the last 20 years. Kombucha’s rise has been strongly tied to the growing number of health-conscious consumers attracted to the health benefits connected to kombucha. From probiotics that help support a healthy gut to antioxidants and polyphenols that help reduce inflammation, there is a reason kombucha has been touted in traditional medicine for millennia.&lt;/p&gt;
+
+&lt;p&gt;Today, kombucha is growing rapidly in both the commercial scene, where the market is expected to increase from just over $3 billion to over $9 billion by 2030, and with home brewers, where “how-to” videos and guides have millions of views. While kombucha is growing and becoming more available nationally at grocery and convenience stores, it still might not be available commercially for many outside of large cities. For this reason, we hope to make brewing kombucha at home easier and more beginner-friendly.&lt;/p&gt;
+
+&lt;p&gt;Homebrewing comes with its own anxiety and worries that we hope to alleviate. The process of brewing Kombucha can take several weeks and goes through several phases of fermentation, where factors like temperature and light exposure can have effects on the outcome of the brew. It can be stressful to not know what is going on, and there is no hand holding to tell you if you are making any mistakes. During the kombucha brewing process, yeasts take sugar and turn it into ethanol and carbon dioxide. Normally, bacteria should then convert the ethanol into acetic acid, but this process can be disrupted if the kombucha is not provided with enough oxygen, leading to the presence of alcohol in the drink. This could be a cause for concern for people who cannot drink alcohol, for example, people who are pregnant, underage, have health conditions, or have cultural stipulations relating to alcohol consumption.&lt;/p&gt;
+
+&lt;h2 id=&quot;overview&quot;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;The BoochBot offers a start-to-finish monitoring system to help brewers better understand their brews. BoochBot displays the active brew time and temperature of the brew, allowing for better consistency between brews. The temperature measurements are also used with user settings to operate a heating pad that regulates the temperature of the brew. In addition, BoochBot monitors for the potential presence of alcohol and offers a warning to brewers if it detects alcohol.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, there is not an easy way to measure the alcohol content of a liquid directly at home. Instead, most home breweries will either measure the change in sugar content with a refractometer or measure the change in the density of the liquid with a hydrometer. These measurements can then be extrapolated to determine approximately how much alcohol is in the liquid.&lt;/p&gt;
+
+&lt;p&gt;We decided to go the buoyancy measurement route after learning about the open source project iSpindel, an electronic tilt hydrometer inside a test tube. The device measures the alcohol content by recording the temperature and angle that it sits in the liquid. These measurements can be used to find the density, and therefore the alcohol content, of the liquid. The iSpindel concept is great, but it lacked some of the functionality we required. The main issue being it only communicated via Wi-Fi, and we wanted it to communicate directly with our main control board without the need for outside networks. So instead, we designed our own tilt hydrometer that used radio communication to relay data with the main board. 
+&lt;img src=&quot;/assets/images/Booch_Bot/BB_image13.png&quot; /&gt;&lt;img src=&quot;/assets/images/Booch_Bot/BB_image1.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure 1 and 2; iSpindel (left) vs BoochBot Hydrometer (right)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Booch_Bot/BB_image9.png&quot; /&gt;
+Figure 3: Initial BoochBot system Diagram&lt;/p&gt;
+
+&lt;p&gt;The BoochBot Hydrometer was able to successfully measure temperature and tilt, however radio communication was unsuccessful. After several failed attempts to get wireless communication working, the team decided to pivot to using a wired temperature sensor and an alcohol gas sensor. The gas sensor is far less accurate than a tilt hydrometer, but does give the user some information regarding the presence of alcohol in the kombucha.
+&lt;img src=&quot;/assets/images/Booch_Bot/BB_image12.png&quot; /&gt;
+Figure 4: Final BoochBot System Diagram&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Booch_Bot/BB_image14.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure 5: Final BoochBot Prototype&lt;/p&gt;
+
+&lt;h2 id=&quot;specific-components&quot;&gt;Specific Components&lt;/h2&gt;
+&lt;h3 id=&quot;main-board&quot;&gt;Main Board&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Booch_Bot/Booch_Schematic_schem.png&quot; alt=&quot;Schematic&quot; title=&quot;Schematic&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure 6: Main Board Schematic&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Booch_Bot/Booch_Schematic_bb.png&quot; alt=&quot;Layout&quot; title=&quot;Layout&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure 7: Main Board Layout&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/Booch_Bot/BB_image8.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure 8: Final Board&lt;/p&gt;
+
+&lt;h3 id=&quot;atmega328p&quot;&gt;ATmega328p&lt;/h3&gt;
+&lt;p&gt;The ATMega328p microcontroller is the brain of our Main board. It connects to all other components through its pins, either directly or through methods such as IIC.&lt;/p&gt;
+
+&lt;h3 id=&quot;heating-pad-and-relay&quot;&gt;Heating Pad and Relay&lt;/h3&gt;
+&lt;p&gt;The heating pad is the HoppsBrew Home Brew Heating Pad for Beer, Wine, Spirits. It draws 25 watts from a Type-A plug connected directly into an outlet. Because of the high power draw relative to all of our other components, we decided to still use wall power for the heating pad. The heating pad automatically activates once plugged in and can reach over 120 degrees Fahrenheit. Because the brewing range for kombucha is only 60–85 degrees, we cut the 2-wire cord in half and connected the live and neutral wires to a relay, which allowed us to better regulate the temperature and start heating the brew only when it was needed. We used the JQX-15F/005 relay via the SparkFun Beefcake Relay Control Kit. This relay was normally open, so to engage the relay and turn on the heating pad, the control pin is set high.&lt;/p&gt;
+
+&lt;h3 id=&quot;real-time-clock&quot;&gt;Real Time Clock&lt;/h3&gt;
+&lt;p&gt;The real-time clock (RTC) we chose to use was the Adafruit PCF8523 with a 12mm diameter, 3V backup battery. One issue we hypothesized was that, at some point during the brewing process, which can take several weeks, power could be lost and all the brewing progress would be as well. By using a stand-alone RTC that automatically counts up, all we need to do is reset the registers when we begin brewing and poll the RTC’s internally incrementing registers for seconds, minutes, hours, and days to know the current brewing time. In the event that power is lost, the backup 3V battery should keep the low-power RTC powered on to continue keeping track of the time elapsed since the brewing started. It is for this ease-of-use and redundancy that we chose not to use the built-in timers and counters of the ATmega328p. In our project, we successfully wrote functions to read and write from the RTC’s registers; however, we were unable to get the RTC to reliably continue counting up once power was lost, despite the attached 3V backup battery.&lt;/p&gt;
+
+&lt;h3 id=&quot;lcd-screen&quot;&gt;LCD Screen&lt;/h3&gt;
+&lt;p&gt;We chose to use a Crystalfontz 20x4 I2C LCD to display the brewing progress to the user because of its relatively easy set-up, low cost, and I2C interface that we were already planning to use for other components. For the purposes of this project, a smaller 20x2 I2C LCD could have been used to reduce cost and form factor further, and the functions we used could be easily repurposed.&lt;/p&gt;
+
+&lt;h3 id=&quot;rotary-encoder&quot;&gt;Rotary Encoder&lt;/h3&gt;
+&lt;p&gt;User inputs during the set-up are done using a rotary encoder with a push button. This allows users to rotate the encoder to increase and decrease the thresholds set up and confirm their choices with a button press. We elected to use the rotary encoder over other user inputs due to our personal familiarity with their operation and its compactness once placed on the board; however, this method can be a little sensitive when turning the encoder quickly, and the value can skip around.&lt;/p&gt;
+
+&lt;h3 id=&quot;radio-transceiver-board&quot;&gt;Radio Transceiver board&lt;/h3&gt;
+&lt;p&gt;We utilize the Adafruit RFM69HCW Transceiver Radio Breakout (Adafruit 3071) because the hydrometer design has all the components sealed in a buoyant capsule. We established it as a gateway node to receive a radio frequency signal at 433 MHz and respond with an acknowledged signal once the data packet is detected. Our microcontroller would then read the received packets, store the values for the x,y, and z orientations of the hydrometer, and compare them to previous values in order to determine the change in tilt across the brew time. This tilt measurement is an accurate way to measure the change in the sugar content and, proportionally, the amount of alcohol formed in the kombucha. This works because the sugar water is significantly more buoyant, and as the sugar converts to alcohol, the buoyancy decreases, which in turn changes the tilt at which the buoy floats.&lt;/p&gt;
+
+&lt;h3 id=&quot;temperature-probe&quot;&gt;Temperature Probe&lt;/h3&gt;
+&lt;p&gt;Our initial choice of measuring the brew’s temperature using the hydrometer’s Adafruit 4646 had to be changed to an Adafruit DS18B20 waterproof temperature probe after we faced complications with establishing radio communication to our main board. Needing to switch from a wireless approach, where the sensor never came in contact with the liquid of the brew, to a sensor that was directly contacting the liquid and connected to the board, we chose the DS18B20. There were some concerns about having certain materials come into contact with the fermenting liquid due to its lowered acidity. Reactive metals, aluminum, and plastics can all break down or leech into the brew over sustained periods or multiple brews and should be avoided when possible. The stainless steel cover on the DS18B20’s probe means that it should be safe for prolonged exposure to the brew. This, along with its low cost and ease of use, is why we chose it for our project.&lt;/p&gt;
+
+&lt;h3 id=&quot;ethanol-vapor-probe&quot;&gt;Ethanol Vapor Probe&lt;/h3&gt;
+&lt;p&gt;In the project version without a tilt sensor to measure alcohol content, we chose to use an MQ3 alcohol sensor to detect potential alcohol. Although we cannot read back measured alcohol values from the MQ3, we are able to set an ethanol threshold for it to detect in the air of the container and trigger an alert if passed. This method should work well in a sealed environment, such as during the second fermentation cycle, when accidental alcohol production is most common. This is due to any ethanol vapor being trapped above the liquid, where the MQ3 is.&lt;/p&gt;
+
+&lt;h3 id=&quot;hydrometer&quot;&gt;Hydrometer&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/Booch_Bot/EE459_Hydrometer_bb.png&quot; alt=&quot;Layout&quot; title=&quot;Layout&quot; /&gt;
+&lt;img src=&quot;/assets/images/Booch_Bot/EE459_Hydrometer_schem.png&quot; alt=&quot;Schematic&quot; title=&quot;Schematic&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Figure 9 and 10: Tilt layout and schematic&lt;/p&gt;
+
+&lt;h3 id=&quot;gyroscope--temperature-sensor&quot;&gt;Gyroscope + Temperature sensor&lt;/h3&gt;
+&lt;p&gt;The hydrometer design utilized the 9-DOF Absolute Orientation IMU (Adafruit 4646), which is a board with an accelerometer, gyroscope, and a temperature sensor. The outputs of the board include the absolute orientation, angular velocity vector, acceleration vector, magnetic field strength vector, gravity vector, and temperature. The board stores the readings at a frequency of 100 Hz which can then be read from their respective registers using an i2c write and read function. For our purposes, we only used the orientation readings in order to calculate the change in tilt of the sensor over the time of the brew and the temperature readings to record temperature and measure whether it is within the threshold ranges. While the Adafruit 4646 is not waterproof or intended immediately for liquids, by containing it in a buoyant, waterproof capsule that would be placed within the brew, we didn’t have an issue.&lt;/p&gt;
+
+&lt;h3 id=&quot;microcontroller--radio&quot;&gt;Microcontroller + Radio&lt;/h3&gt;
+&lt;p&gt;Because the hydrometer design involved placing the Adafruit 4646 in a sealed buoyant capsule, we had to include a way to communicate with the main board of the device. We opted to use an Adafruit Feather 32u4 with RFM69HCW Packet Radio (Adafruit 3077), which would communicate with the Adafruit 4646 via I2C. It would then transmit the data using a 433 MHz radio frequency to the Adafruit 3071 transceiver breakout board on the main device board. It would send the orientation data as x,y, and z values as well as the temperature reading in a packet and then look for an acknowledge response signal to indicate that the transceiver breakout board successfully received the data packets. The Adafruit 3077 microcontroller and Adafruit 4646 were powered by a 3.7 V rechargeable Li-Po battery with 650 mAh.&lt;/p&gt;
+
+&lt;h3 id=&quot;discussion&quot;&gt;Discussion&lt;/h3&gt;
+&lt;p&gt;In this project, we tried to use 433MHz radio to communicate between the Main Board and the Hydrometer. This proved to be extremely challenging. Because we were using the bare ATMega chip, we were unable to use existing libraries to facilitate this communication. When we wrote our own code, we were unable to debug where the communication disconnect was, as we were stuck in a catch-22 of needing the receiver to test the transmitter and the transmitter to test the receiver. From what we can see through the serial monitor on the Adafruit 3077 Feather, the transceiver was successfully sending out the data packets on a 433 Mhz radio frequency but never received the acknowledged signal back. On the other side, the transceiver was claiming to be searching for a 433 Mhz signal but was unable to find one. We experimented with different antenna lengths but were unable to identify the issue between the nodes. In the end, we had to go with the wired minimum viable product option using the ethanol sensor.&lt;/p&gt;
+
+&lt;p&gt;An alternative communication protocol for a future BoochBot would be Bluetooth Low Energy (BLE). In the BLE standard, there are Peripheral devices which send data, and Central devices which receive data. We initially shied away from this option due to its relative complexity and its lack of support for communication back and forth between microcontrollers. However, we actually only need one-way communication, which means BLE is an option after all. In this project, the Hydrometer would be the peripheral, and the Main Board would be the Central device. For the Hydrometer, we could use a board like the Arduino Nano 33 BLE Sense Rev2, which includes a gyroscope and temperature sensor. As for the central device, the easiest thing seems to be adding another microcontroller with BLE capability and communicating with the existing ATMega chip via IIC, or just replacing the ATMega with it outright.&lt;/p&gt;
+
+&lt;p&gt;Another thing we attempted to address was a fail-safe in the event that power is lost during brewing. If someone is several days into brewing, the loss of power and brewing data could ruin a brew and be quite frustrating. Our approach saved the brewing timer and temperature range that the user selected to the EEPROM of the ATmega328p. That way, if power is lost, the RTC should continue keeping track of the time elapsed thanks to its backup battery. In our testing, we were correctly saving the system’s state along with the brewing parameters; however, a power outage caused errors with the RTC. Once power was restored, the time values being read from the RTC across the seconds, minutes, hours, and days registers would have all changed, seemingly at random. We then attempted to also store the time values to the EEPROM during the brewing process and then replace any values in the RTC with those if power was lost and restored. This would have only had the system pick up where it left off, meaning long-term power outages would cause the system to brew for much longer than desired, but we ended up facing the same issue as before, with strange values being read and displayed from the RTC, with the seconds and minutes displaying values well over 60, which should cause a rollover with the register.&lt;/p&gt;
+
+&lt;p&gt;The final estimated cost for our device is around 55 dollars for the single board BoochBot, 125 dollars for the radio BoochBot, and 115 dollars for the BLE BoochBot. These prices could be brought down in the final version if we create our own PCB and use bare chips instead of breakout boards. Additionally, If we were making multiple devices, we would be able to buy parts in bulk at a discounted price.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;We were able to create a system that can monitor and regulate the temperature of the kombucha brewing process. Users can set a timer for the brew as well as a temperature range they want the system to try and maintain. Thanks to the temperature probe and heating pad, we are able to measure the brew’s temperature and regulate the temperature if it drops below the range that the user sets. Once the brew timer finishes, the system tells the user that the brewing is done via the LCD screen and flashes a green LED to get the brewer’s attention. After the timer runs out, the system displays a warning if ethanol was detected at any point during the brewing process.
+We were unable to fully ensure proper operation after a power loss, which should be addressed if this project is further developed. Although we were unable to detect the exact reason for this error, it was likely the fault of a faulty battery in the RTC. We were unable to provide a way to measure the specific alcohol content of a brew, which, if displayed to the user throughout the brewing process, would provide them with more insight into what their brew is doing and potentially make corrections before too much alcohol is produced.
+Overall, this project is a good first step towards what we believe could be a commercially viable product.&lt;/p&gt;</content><author><name></name></author><category term="Projects" /><summary type="html">Booch Bot - a capstone project For my electrical engineering capstone class we were tasked with making a device to make someones life better in some way. This was a very broad topic, which gave us a lot of creative freedom in deciding what we would build. My group decided we wanted to make a Kombucha brewing system.</summary></entry><entry><title type="html">Soly Clean Solar</title><link href="http://localhost:4000/projects/2024/04/24/SolyCleanSolar.html" rel="alternate" type="text/html" title="Soly Clean Solar" /><published>2024-04-24T00:00:00-07:00</published><updated>2024-04-24T00:00:00-07:00</updated><id>http://localhost:4000/projects/2024/04/24/SolyCleanSolar</id><content type="html" xml:base="http://localhost:4000/projects/2024/04/24/SolyCleanSolar.html">&lt;h1 id=&quot;soly-clean-solar&quot;&gt;Sol’y Clean Solar&lt;/h1&gt;
+&lt;p&gt;A self cleaning solar panel system&lt;/p&gt;
+
+&lt;h3 id=&quot;context-solar-panels-get-dirty&quot;&gt;Context: Solar panels get dirty&lt;/h3&gt;
+&lt;p&gt;Soiling is the Process of dirt accumulating on panels and decreasing power. This can cause a 3-4% power drop, costing solar farms $5.5 billion dollars annually. The solution to this is cleaning solar panels, but this takes a lot of water. It takes 300,000 gallons per acre per year to clean a solar farm.&lt;/p&gt;
+
+&lt;h3 id=&quot;objective-make-a-self-cleaning-solar-panel&quot;&gt;Objective: make a self cleaning solar panel&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/SolyCleanSolar/systemDiagram.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;my-contributions-electrical-and-firmware&quot;&gt;My Contributions: Electrical and Firmware&lt;/h2&gt;
+&lt;p&gt;We wanted an IOT data monitoring system for the solar panel to track energy output and initiate cleaning when efficiency drops. I built one based on Open Green Energy’s [Solar Panel Monitoring System V2][inspo-link]. 
+The System tracks voltage, current, and temperature, and uploads it to a BLYNK web interface&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/SolyCleanSolar/breadbord.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/SolyCleanSolar/fullBreadboard.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/SolyCleanSolar/IMG_5353.jpeg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I also designed the electrical system and wrote the firmware for controlling the pannel movement, so that the pannel could track the sun. This involved a lot of high power electronics, which was new for me. To control the linear actuators I used relays in an H-Bridge, and to control the central dc motor I used another relay plus a DC Motor Speed Controller Switch.
+&lt;img src=&quot;/assets/images/SolyCleanSolar/Full Solar_system 2_bb.png&quot; /&gt;
+&lt;img src=&quot;/assets/images/SolyCleanSolar/motorController.jpg&quot; /&gt;
+&lt;img src=&quot;/assets/images/SolyCleanSolar/LinActControl.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Evidently I did not get any good pictures of the whole system, but here is what it kinda looked like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/SolyCleanSolar/IMG_5584.jpeg&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Projects" /><summary type="html">Sol’y Clean Solar A self cleaning solar panel system</summary></entry><entry><title type="html">VLSI work</title><link href="http://localhost:4000/projects/2023/12/05/vlsi.html" rel="alternate" type="text/html" title="VLSI work" /><published>2023-12-05T00:00:00-08:00</published><updated>2023-12-05T00:00:00-08:00</updated><id>http://localhost:4000/projects/2023/12/05/vlsi</id><content type="html" xml:base="http://localhost:4000/projects/2023/12/05/vlsi.html">&lt;h1 id=&quot;mos-vlsi-circuit-design-final-project&quot;&gt;MOS VLSI Circuit Design Final Project&lt;/h1&gt;
+
+&lt;p&gt;For the final project of my EE477 class at usc we were tasked with making a VLSI circuit containing a Multiplier, Arbiter, and Divider. This was a group project, and I was in charge of designing the Multiplier and Arbiter.&lt;/p&gt;
+
+&lt;p&gt;Full System:
+&lt;img src=&quot;/assets/images/VLSI/fullSystem.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;multiplier&quot;&gt;Multiplier&lt;/h2&gt;
+&lt;p&gt;The following circuit is a four bit multiplier
+&lt;img src=&quot;/assets/images/VLSI/Four_bit_mult.png&quot; /&gt;
+&lt;img src=&quot;/assets/images/VLSI/fbm_verif.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The multiplier contains and gates, half adders, and full adders.
+&lt;img src=&quot;/assets/images/VLSI/AND2x1.png&quot; /&gt;
+&lt;img src=&quot;/assets/images/VLSI/HA.png&quot; /&gt;
+&lt;img src=&quot;/assets/images/VLSI/FA.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;arbiter&quot;&gt;Arbiter&lt;/h2&gt;
+&lt;p&gt;The arbiter decides which section can access the single output.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/VLSI/arb.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/VLSI/arb_demo.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In this screenshot of the extracted view, we can see that when just M requests the output, it receives the output (MD goes high, indicating multiplier), likewise for D. When neither requests S is set to one, indicating that the output should stall. At 16ns, when both m and d request, m is granted output because d had outputted previously.&lt;/p&gt;</content><author><name></name></author><category term="Projects" /><summary type="html">MOS VLSI Circuit Design Final Project</summary></entry><entry><title type="html">Is my Wi-Fi watching me?</title><link href="http://localhost:4000/projects/2023/04/28/Illumin.html" rel="alternate" type="text/html" title="Is my Wi-Fi watching me?" /><published>2023-04-28T00:00:00-07:00</published><updated>2023-04-28T00:00:00-07:00</updated><id>http://localhost:4000/projects/2023/04/28/Illumin</id><content type="html" xml:base="http://localhost:4000/projects/2023/04/28/Illumin.html">&lt;h1 id=&quot;is-my-wi-fi-watching-me---illumin&quot;&gt;Is my Wi-Fi watching me? - Illumin&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Abstract:&lt;/strong&gt;&lt;br /&gt;
+    This article provides an overview of Wi-Fi in its current state, and how it will be used in the future. The structure of Wi-Fi is examined from the ground up, beginning with the basics of radio waves and ending with the complex encoding strategies used to transmit as much data as possible. This information is used to explain new developments in Wi-Fi sensing, a method of sensing the world using Wi-Fi signals, such as the application of machine learning algorithms to channel state information. To conclude, potential uses and privacy implications of Wi-Fi sensing are discussed.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;About the Author&lt;/strong&gt;&lt;br /&gt;
+    Georgia Danehy is a Junior studying computer engineering and computer science at the University of Southern California. She is currently doing Wi-Fi sensing research under the supervision of Bhaskar Krishnamachari in the Autonomous Networks Research Group.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Keywords&lt;/strong&gt;&lt;br /&gt;
+    Wi-Fi sensing, Networking, Radio, IEEE 802.11, Machine Learning&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Is my Wi-Fi watching me?&lt;/strong&gt;&lt;br /&gt;
+Wi-Fi: Those three little bars at the top of your phone screen. It is a technology that we use daily. When it is working, we don’t think about it; but when the Wi-Fi is out, it can become a significant headache. The communication standard behind all of this is called IEEE 802.11. New research is expanding what Wi-Fi is capable of with Wi-Fi sensing. Soon, this protocol will not just send you information, it may also &lt;em&gt;see&lt;/em&gt; movements using small changes in the radio waves.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What is WI-FI?&lt;/strong&gt;&lt;br /&gt;
+Wi-Fi is a signal used to transmit information using radio waves. Radio waves are just one part of the electromagnetic spectrum, comprising energy waves of different sizes. Other parts of the electromagnetic spectrum are X-rays and visible light. X-rays and Visible light both have very short wavelengths. An X-ray’s wavelength is so tiny, as small as the width of an atom (Figure 1), that it can pass through objects such as human bodies, making them useful for medical imaging [1]. Radio waves are much larger, with wavelengths anywhere from a few millimeters to a few thousand kilometers! Because these electromagnetic waves are so long, they experience less distortion and interference over long distances. They can even bend around buildings [1].&lt;br /&gt;
+&lt;img src=&quot;/assets/images/Illumin/image3.png&quot; /&gt;&lt;br /&gt;
+Figure 1: The electromagnetic spectrum.&lt;br /&gt;
+Source: [1]&lt;/p&gt;
+
+&lt;p&gt;Electromagnetic waves are speedy. They travel at the speed of light, making them some of the fastest things in the universe and very useful for communication [1]. One method of communication you have probably used before is radio broadcasting. For those under the age of 12, this is the ancient technology we used to listen to the news and music in the days before Spotify and cell phones! Radio broadcasting comprises amplitude modulation (AM) and frequency modulation (FM). As the name implies, in AM radio, data is transmitted by changing an electromagnetic wave’s vertical size, or amplitude. In contrast, in FM radio, the horizontal distance or frequency of the wave is changed [2]. These changes can then be translated into sound by your Radio receiver.&lt;br /&gt;
+&lt;img src=&quot;/assets/images/Illumin/image8.png&quot; /&gt;&lt;br /&gt;
+Figure 2: AM and FM waves&lt;br /&gt;
+Source: [2]&lt;/p&gt;
+
+&lt;p&gt;Both systems are still used today; however, AM radio has been falling out of fashion, with many new car radios unable to receive AM radio signals. AM radio is transmitted at a lower frequency than FM Radio, which means less data can be received. This results in worse sound quality and is not suitable for transmitting music. AM radio does have one trick up its sleeve, which is that it has a much more extensive range than FM radio. Therefore, people can still receive AM radio broadcasts even in remote areas [2].&lt;/p&gt;
+
+&lt;p&gt;Radio stations are all broadcasted at slightly different frequencies, so their signals do not interfere. Frequency is measured in hertz (Hz), which is the number of cycles per second. &lt;br /&gt;
+&lt;img src=&quot;/assets/images/Illumin/image4.png&quot; /&gt;&lt;br /&gt;
+Figure 3: Properties of a Sine wave&lt;br /&gt;
+Source: Original image&lt;/p&gt;
+
+&lt;p&gt;Similar to how multiple walkie-talkies on the same channel can result in lost or garbled transmissions, identical frequencies in Wi-Fi signals can cause the waves to disrupt each other.&lt;/p&gt;
+
+&lt;p&gt;Different countries have regulatory bodies that allocate frequencies to different uses to prevent this from happening. This organization is called the Federal Communications Commission (FCC) in the United States. AM radio is broadcasted between 535-1605 kHz (103 Hz), whereas FM radio broadcasts between 88 and 108 MHz (106Hz) [2]. Wi-Fi is transmitted at even higher frequencies, between 2.4-60 GHz (109 Hz) [3]. Within each of these bands are multiple smaller slices on which data travels. So, when your phone is connected to a 2.4 GHz network, it is likely tuning into one of 11 different channels with frequencies between 2.412 and 2.462 GHz [3].&lt;br /&gt;
+&lt;img src=&quot;/assets/images/Illumin/image6.png&quot; /&gt;&lt;br /&gt;
+Figure 4: Channel distribution on the 2.4 GHz Network&lt;br /&gt;
+Source: [4]&lt;/p&gt;
+
+&lt;p&gt;This is all fine and dandy, but how do computers translate between electromagnetic waves and the binary ones and zeros that the rest of the computer uses? First, data is translated into analog waves using techniques we have seen before, such as amplitude and frequency modulation, as well as another type of modulation called phase modulation or phase shift keying. In an FM radio wave, a lower frequency might represent a 0 in binary, and a higher frequency would represent a 1 in binary. Likewise, in AM data, a 0 is a low amplitude, and a 1 is a high amplitude. In phase modulation, each bit is represented by a wave, such as a sine for 1 or a cosine for 0, and these waves are strung together to communicate data. The magical thing about this is that all these methods can be used simultaneously, leaving multiple distinct options for longer bits. For example, a low amplitude cosine might represent the combination 00, while a high amplitude sine wave would represent the combination 11. This is called Binary Phase Shift Keying (BPSK) [5]. &lt;br /&gt;
+&lt;img src=&quot;/assets/images/Illumin/image7.png&quot; /&gt;&lt;br /&gt;
+Figure 5: Binary Phase Shift Keying&lt;br /&gt;
+Source: [5]&lt;/p&gt;
+
+&lt;p&gt;Using BPSK, Wi-Fi signals can effectively transmit more than 16 different bit combinations within a single transmission period. However, this isn’t enough information to watch all of your favorite  cat videos in 4k. To transmit even more data,  Wi-Fi uses OFDM (Orthogonal Frequency Division Multiplexing) which can cram multiple waveforms into a single radio transmission. An OFDM transmission contains different subcarriers, which are individual waveforms that have already undergone BPSK. These subcarriers are then transmitted orthogonally (at a right angle) so that the data do not interfere with each other.&lt;/p&gt;
+
+&lt;p&gt;All of these bits would be meaningless unless they had an organizational structure. How would a computer know if data is for them or if it arrived correctly? This is what Wi-Fi packets do.  Packets can be thought of as letters, where data is the letter’s content and addressing information is the envelope. These packets are routed between multiple Wi-Fi routers and servers and must undergo successive layers of packaging at each level of routing. Think of routing as sending a letter through USPS. The letter is first placed in a mailbox, then collected by a mail carrier and delivered to a post office. The letter then goes through a series of vehicles, sorting centers, and mailboxes before finally arriving at its destination, each time shedding and collecting labels and packaging to keep it safe and going in the right direction.  &lt;br /&gt;
+&lt;img src=&quot;/assets/images/Illumin/image5.png&quot; /&gt;&lt;br /&gt;
+Figure 6: A bird’s eye view of the internet&lt;br /&gt;
+Source: [6]&lt;/p&gt;
+
+&lt;p&gt;The transmission of Wi-Fi packets through the internet involves multiple layers of packaging and routing through different communication protocols such as Ethernet, HTTPS, and DNS [6]. A communication protocol is like a language for computers. It determines what frequencies to use, the format of the data and addressing information, methods for error detection and correction, and much more. The specific communication protocol behind Wi-Fi is called IEEE 802.11. It is governed by the Institute of Electrical and Electronics Engineers (IEEE), a professional organization that establishes and maintains standards for different protocols, such as Ethernet and Bluetooth. Despite what many people think, Wi-Fi does not stand for “Wireless Fidelity”; the name does not stand for anything! A hired advertising firm just made it up [7].&lt;/p&gt;
+
+&lt;p&gt;The Wi-Fi protocol 802.11 is often updated, with new updates coming out occasionally. A big update you might have heard of was Wi-Fi 6E, which expanded the protocol to include more high-frequency bands. However, one particularly interesting upcoming protocol change is 802.11bf, which includes guidelines on Wi-Fi sensing.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What is Wi-Fi Sensing?&lt;/strong&gt;&lt;br /&gt;
+Radio is often used for sensing techniques, for example, radar. Radar was originally a secret military technology developed to detect enemies. It works by sending out bursts of radio waves and listening for them to be reflected back. Based on the elapsed time between sending and receiving, radar systems can determine the distance and angle of objects in the system’s path. Nowadays, radar systems are widely used. They can be found in most planes and ships to detect objects and avoid collisions; meteorologists even use them to detect weather systems [8]. &lt;br /&gt;
+Wi-Fi sensing uses radio waves in another way. Instead of sending out signals and waiting for them to return, Wi-Fi Sensing leverages information collected while transmitting a packet over a wireless network. This information is known as channel state information (CSI), which can be used to describe how a signal propagates through a room [9]. Modern wireless routers and receivers often have multiple antennas and subcarriers for OFDM. CSI data is collected from pairs of these antennas. It encapsulates information on the amplitude, phase, and frequency response of signals after they have scattered, faded, and decayed in power due to distance on each subcarrier [9]. All of this information is then combined into one numerical value. On its own, a single piece of CSI data is not very useful. However, more data reveals patterns that can describe the world around us. There is CSI data for each packet and subcarrier. With multiple subcarriers and packets, you can combine these data points into an image of sorts. The more packets and subcarriers there are to collect data from, the higher the resolution of the CSI Image.  &lt;br /&gt;
+&lt;img src=&quot;/assets/images/Illumin/image1.png&quot; /&gt;&lt;br /&gt;
+Figure 5: CSI Images of different human activities&lt;br /&gt;
+Source: [8]&lt;/p&gt;
+
+&lt;p&gt;If a person moves around a room, how a Wi-Fi signal propagates will change. Therefore, changes in CSI data are indicative of movement. This alone can be useful for applications such as home security systems and smart homes. However, recent breakthroughs in machine learning have made this technology even more powerful. Humans can not easily pick out small patterns in CSI data, but machine learning algorithms can. Now researchers have been able to recognize human activities, gestures, and poses with only Wi-Fi signals [9]. Researchers at Carnegie Mellon University have developed deep learning algorithms that can recognize human poses at a similar accuracy as a camera system [10]. Other researchers at Michigan State University have developed ways to log keystrokes using finger movements collected in CSI data [11]. &lt;br /&gt;
+&lt;img src=&quot;/assets/images/Illumin/image2.png&quot; /&gt;&lt;br /&gt;
+Figure 6: Example of Wi-Fi pose estimation&lt;br /&gt;
+Source: [9]&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;So my Wi-Fi router can stalk me. Now what?&lt;/strong&gt;&lt;br /&gt;
+This may all seem scary, but the good news is that a universal system to classify fine-grain movements using Wi-Fi is years away. Models for classifying movements are hyper-specific to the location in which they are trained. If you bring any of these systems out of the laboratories they are trained in, they will no longer work. This is because training a machine learning model requires a lot of labeled data, and training a general model will require even more data. Unfortunately (or fortunately, depending on how you see it), there are very few CSI data sets. There is, however, an endless amount of data that can be collected. We just have to go out there and collect it!&lt;/p&gt;
+
+&lt;p&gt;This technology does bring up many moral questions surrounding surveillance. Should engineers be making more tools to invade the privacy of others? I would argue that this technology has enough benefits that engineers should develop it further. A camera with a similar algorithm could do most things Wi-Fi sensing can do, but the Wi-Fi sensor is more privacy friendly. Wi-Fi signals cannot capture as much personally identifiable information as cameras can. They are incapable of facial recognition and cannot read documents and computer screens. Wi-Fi sensing can operate in an essential place between motion sensors and cameras, protecting the anonymity of people while also being able to tell the difference between, say, a dog and a child. This may be useful for doing things like turning on and off lights and temperature control in houses. These sensors are also capable of operating in situations where there is reduced visibility due to a lack of light or the presence of smoke. This would make Wi-Fi sensing useful for firefighters looking for people in burning buildings or parents who want to monitor their children at night without recording invasive videos. The sky is the limit for this new technology. Who knows what other uses people will find for Wi-Fi sensing?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;References&lt;/strong&gt;&lt;br /&gt;
+[1]&lt;br /&gt;
+Wikipedia Contributors, “Electromagnetic spectrum,” &lt;em&gt;Wikipedia&lt;/em&gt;, Mar. 27, 2023. https://en.wikipedia.org/wiki/Electromagnetic_spectrum#/media/File:EM_Spectrum_Properties_edit.svg (accessed Apr. 14, 2023).&lt;br /&gt;
+[2]&lt;br /&gt;
+Wikipedia Contributors, “Modulation,” &lt;em&gt;Wikipedia&lt;/em&gt;, Mar. 21, 2023. https://en.wikipedia.org/wiki/Modulation#/media/File:Amfm3-en-de.gif (accessed Apr. 14, 2023).&lt;br /&gt;
+[3]&lt;br /&gt;
+Wikipedia Contributors, “List of WLAN channels,” &lt;em&gt;Wikipedia&lt;/em&gt;, Apr. 10, 2023. https://en.wikipedia.org/wiki/List_of_WLAN_channels#United_States (accessed Apr. 14, 2023).&lt;br /&gt;
+[4]&lt;br /&gt;
+D. Coleman, “2.4 GHz Channel Planning,” &lt;em&gt;Extreme Networks&lt;/em&gt;, Jul. 2012. https://www.extremenetworks.com/extreme-networks-blog/2-4-ghz-channel-planning/ (accessed Apr. 14, 2023).&lt;br /&gt;
+[5]&lt;br /&gt;
+S. Hrishikesan, “BPSK System with Block Diagram,” &lt;em&gt;Electronics and Communications&lt;/em&gt;, Feb. 18, 2019. https://www.electronicsandcommunications.com/2019/02/bpsk-system-with-block-diagram.html (accessed Apr. 14, 2023).&lt;br /&gt;
+[6]&lt;br /&gt;
+V. Dejwakh, “How the Internet Works, Part I - The Internet Infrastructure,” &lt;em&gt;Vahid Dejwakh&lt;/em&gt;, Dec. 15, 2020. https://vahid.blog/post/2020-12-15-how-the-internet-works-part-i-infrastructure/&lt;br /&gt;
+[7]&lt;br /&gt;
+The Editors of Encyclopaedia Britannica, “Wi-Fi | Definition, Name, &amp;amp; Facts | Britannica,” &lt;em&gt;Encyclopædia Britannica&lt;/em&gt;. 2023. Accessed: Apr. 14, 2023. [Online]. Available: https://www.britannica.com/technology/Wi-Fi&lt;br /&gt;
+[8]&lt;br /&gt;
+Wikipedia Contributors, “Radar,” &lt;em&gt;Wikipedia&lt;/em&gt;, Mar. 29, 2023. https://en.wikipedia.org/wiki/Radar (accessed Apr. 14, 2023).&lt;br /&gt;
+[9]&lt;br /&gt;
+J. Yang &lt;em&gt;et al.&lt;/em&gt;, “SenseFi: A Library and Benchmark on Deep-Learning-Empowered WiFi Human Sensing,” 2022, Accessed: Apr. 15, 2023. [Online]. Available: https://arxiv.org/abs/2207.07859&lt;br /&gt;
+[10]&lt;br /&gt;
+F. Wang, S. Zhou, S. Panev, J. Han, and D. Huang, “Person-in-wifi: Fine-grained person perception using WiFi,” in &lt;em&gt;2019 IEEE/CVF International Conference on Computer Vision (ICCV)&lt;/em&gt;, 2019. doi: https://doi.org/10.1109/ICCV.2019.00555.&lt;br /&gt;
+[11]&lt;br /&gt;
+K. Ali, A. Liu, W. Wang, and M. Shahzad, “Keystroke recognition using WiFi signals,” in &lt;em&gt;MobiCom ’15: Proceedings of the 21st Annual International Conference on Mobile Computing and Networking&lt;/em&gt;, 2015. doi: https://doi.org/10.1145/2789168.2790109.&lt;br /&gt;
+[12]&lt;br /&gt;
+F. Restuccia, “IEEE 802.11bf: Toward ubiquitous wi-fi sensing,” &lt;em&gt;CoRR&lt;/em&gt;, vol. abs/2103.14918, 2021, Available: https://arxiv.org/abs/2103.14918&lt;br /&gt;
+[13]&lt;br /&gt;
+Z. Zhou, Z. Yang, C. Wu, L. Shangguan, and Y. Liu, “Towards omnidirectional passive human detection,” &lt;em&gt;2013 Proceedings IEEE INFOCOM&lt;/em&gt;, Apr. 2013, doi: https://doi.org/10.1109/infcom.2013.6567118.&lt;br /&gt;
+[14]&lt;br /&gt;
+J. Geng, D. Huang, and F. De la Torre, “DensePose from WiFi,” 2022, doi: https://doi.org/10.48550/ARXIV.2301.00250.&lt;/p&gt;</content><author><name></name></author><category term="Projects" /><summary type="html">Is my Wi-Fi watching me? - Illumin Abstract: This article provides an overview of Wi-Fi in its current state, and how it will be used in the future. The structure of Wi-Fi is examined from the ground up, beginning with the basics of radio waves and ending with the complex encoding strategies used to transmit as much data as possible. This information is used to explain new developments in Wi-Fi sensing, a method of sensing the world using Wi-Fi signals, such as the application of machine learning algorithms to channel state information. To conclude, potential uses and privacy implications of Wi-Fi sensing are discussed.</summary></entry><entry><title type="html">Le-Chord Spring Semester</title><link href="http://localhost:4000/projects/2023/03/28/Le-Chord-2.html" rel="alternate" type="text/html" title="Le-Chord Spring Semester" /><published>2023-03-28T01:51:39-07:00</published><updated>2023-03-28T01:51:39-07:00</updated><id>http://localhost:4000/projects/2023/03/28/Le-Chord-2</id><content type="html" xml:base="http://localhost:4000/projects/2023/03/28/Le-Chord-2.html">&lt;h1 id=&quot;le-chord---spring-2023-update&quot;&gt;Le Chord - Spring 2023 update&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/LeChord/LeChordFinished.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;project-overview&quot;&gt;Project Overview&lt;/h2&gt;
+&lt;p&gt;The goal of this project is to make our own version of the Suzuki Omnichord. We used the “Le Strum” DIY midi controller as the base of our instrument and then used open-source software on a raspberry pi to output sound. For finishing touches, we are building an enclosure and putting together circuitry to form a cohesive instrument. We are also designing a web interface to sample sounds to make custom sound fonts to be used on the instrument,&lt;/p&gt;
+
+&lt;h2 id=&quot;project-details&quot;&gt;Project Details&lt;/h2&gt;
+&lt;p&gt;The starting point for the project, the Le-Strum, is an open source midi controller, which acts as a digital input for the creation of music, similar to a computer keyboard. The midi controller came as a kit of parts that we had to solder together. For most of the team members this was their first time soldering so we took this opportunity as an educational experience to learn more about soldering. Being open source, the lestrum is built for hacking. For fall showcase we had just the stock LeStrum, but for our final product we remapped the buttons and strings onto our instrument for a more professional look. 
+&lt;img src=&quot;/assets/images/LeChord/lestrum.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To make an instrument using a midi controller we needed to find a way to take those signals sent by the controller and turn them into sound. We initially did this using a raspberry pi and the Headless Pi Synth library. This software worked pretty well once everything was up and running, however, getting the raspberry pi connected to the internet and starting the software was challenging.&lt;br /&gt;
+After much frustration we ended up switching to an Electrosmith daisy seed, an embedded platform for music! The Breakout board (called the pod) has a 3.5mm stereo jack for TRS MIDI input and Built In headphone amplifier with dedicated volume control. It is also Open Source and Programmable in C++
+&lt;img src=&quot;/assets/images/LeChord/DaisyPod.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For the design of our instrument, we ultimately went with a heart-shaped autoharp-inspired casing. The first iteration of the case has been 3D-printed. We are using this to figure out the spacing of the electronic components and find any kinks in our design. Once we figured everything out we built a new enclosure out of wood using a laser cutter.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/LeChord/LeChordCad.png&quot; /&gt;
+&lt;img src=&quot;/assets/images/LeChord/prororypeCad.png&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Projects" /><summary type="html">Le Chord - Spring 2023 update</summary></entry><entry><title type="html">Wifi Sensing Lit Review</title><link href="http://localhost:4000/projects/2023/02/09/Wifi.html" rel="alternate" type="text/html" title="Wifi Sensing Lit Review" /><published>2023-02-09T00:51:39-08:00</published><updated>2023-02-09T00:51:39-08:00</updated><id>http://localhost:4000/projects/2023/02/09/Wifi</id><content type="html" xml:base="http://localhost:4000/projects/2023/02/09/Wifi.html">&lt;h1 id=&quot;wifi-sensing-literature-review&quot;&gt;Wifi Sensing Literature Review&lt;/h1&gt;
+&lt;p&gt;The following is a presentation I gave to my research group on wifi sensing.&lt;/p&gt;
+
+&lt;h1 id=&quot;a-review-of-deep-learning-and-its-applications-to-wifi-human-sensing&quot;&gt;A review of Deep Learning and Its Applications to WiFi Human Sensing&lt;/h1&gt;
+&lt;h2 id=&quot;the-paper&quot;&gt;The Paper&lt;/h2&gt;
+&lt;p&gt;Deep learning and its applications to WiFi human sensing: A benchmark and a tutorial
+Submitted on 16 July 2022, last revised 16 December 2022
+J. Yang et. al. 
+Nanyang Technological University in Singapore&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-wi-fi-sensing&quot;&gt;What is Wi-Fi sensing&lt;/h2&gt;
+&lt;p&gt;Also called WLAN Sensing
+Analyzing the patterns of wireless signals in the form of Channel State Information
+Analogous to using WiFi for Radar&lt;/p&gt;
+
+&lt;h2 id=&quot;use-cases&quot;&gt;Use Cases&lt;/h2&gt;
+&lt;p&gt;Device Free Human detection:
+occupancy detection
+activity recognition
+fall detection
+gesture recognition
+human identification
+people counting
+More privacy friendly than cameras&lt;/p&gt;
+
+&lt;h2 id=&quot;ieee-80211bf&quot;&gt;IEEE 802.11bf&lt;/h2&gt;
+&lt;p&gt;New wi-fi standard incorporating WiFi sensing in regular WiFi service
+Currently under production, 2024 release date&lt;/p&gt;
+
+&lt;h2 id=&quot;current-wi-fi-sensing-methods&quot;&gt;Current Wi-Fi sensing methods:&lt;/h2&gt;
+&lt;h3 id=&quot;model-based&quot;&gt;Model Based&lt;/h3&gt;
+&lt;p&gt;Physical models that describe the WiFi signals propagation
+Works well for sensing single motions&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Breathing&lt;/li&gt;
+  &lt;li&gt;Falling down&lt;/li&gt;
+  &lt;li&gt;Occupancy detection
+Origin WiFi? (Company that is trying to commercialize the technology)
+    &lt;h3 id=&quot;learning-based&quot;&gt;Learning Based&lt;/h3&gt;
+    &lt;p&gt;Able to perform complicated sensing tasks&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Gesture recognition&lt;/li&gt;
+  &lt;li&gt;Keystroke recognition&lt;/li&gt;
+  &lt;li&gt;activity recognition&lt;/li&gt;
+  &lt;li&gt;human identification&lt;/li&gt;
+  &lt;li&gt;people counting
+Require large amounts of labeled data&lt;/li&gt;
+  &lt;li&gt;Expensive&lt;/li&gt;
+  &lt;li&gt;Environment Dependent&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;channel-state-information&quot;&gt;Channel State Information&lt;/h2&gt;
+&lt;p&gt;Describes how a signal propagates from the transmitter to the receiver
+WiFi Access points usually have multiple antennas and subcarriers
+CSI describes the phase shift of multi-path and amplitude attenuation on each subcarrier for a pair of transmitter and receiver antennas
+CSI data has better resolutions for sensing compared to received signal strength&lt;/p&gt;
+
+&lt;h2 id=&quot;collecting-csi-data&quot;&gt;Collecting CSI Data&lt;/h2&gt;
+&lt;p&gt;There are a number of tools available to collect CSI data&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Some commonly used are the Intel 5300 NIC, Atheros CSI Tool, and Nexmon CSI Tool&lt;/li&gt;
+  &lt;li&gt;CSI tools are WiFi chip specific
+I found a library called CSIkit that supports the following hardware:&lt;/li&gt;
+  &lt;li&gt;Qualcomm Atheros 802.11n Chipsets&lt;/li&gt;
+  &lt;li&gt;Intel IWL5300&lt;/li&gt;
+  &lt;li&gt;Broadcom BCM4358, BCM43455c0, BCM4366c0&lt;/li&gt;
+  &lt;li&gt;ESP32 via ESP32-CSI-Tool
+This could be a good place to add to the field - develop software to extract CSI data from different sources&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;csi-data-processing&quot;&gt;CSI Data processing&lt;/h2&gt;
+&lt;p&gt;CSI data consists of a vector of complex number including the amplitude and phase
+The most common methodologies are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Only use the amplitude data as input - most common&lt;/li&gt;
+  &lt;li&gt;Use the CSI difference between antennas
+    &lt;ul&gt;
+      &lt;li&gt;Used in model based methods&lt;/li&gt;
+      &lt;li&gt;Requires clean data&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Use the processed Doppler representation of CSI.
+    &lt;ul&gt;
+      &lt;li&gt;eliminates the environmental dependency&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;how-human-activities-affect-csi&quot;&gt;How Human Activities Affect CSI&lt;/h2&gt;
+&lt;p&gt;CSI data for human sensing is composed of two dimensions: the subcarrier and the packet number
+Each packet and the associated subcarrier information represent a “CSI Image”, a series of these represent a “CSI Video”
+CSI Videos can describe human activity patterns&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Subcarrier dimension → spatial features
+    &lt;ul&gt;
+      &lt;li&gt;Pixels, convolutional layers&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Time dimension → temporal features
+    &lt;ul&gt;
+      &lt;li&gt;Can be modeled by recurrent neural networks&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Antenna dimension → resolution and channel features
+    &lt;ul&gt;
+      &lt;li&gt;similar to RGB channels of an image&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;deep-learning-methods&quot;&gt;Deep Learning methods&lt;/h2&gt;
+&lt;p&gt;Mostly Supervised Learning
+More research is needed in unsupervised learning, it is promising in producing more generalized models&lt;/p&gt;
+
+&lt;h2 id=&quot;recommended-future-directions&quot;&gt;Recommended Future Directions&lt;/h2&gt;
+
+&lt;p&gt;Data-efficient learning
+Model compression or lightweight model design&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Important for real-time processing
+Multi-modal learning&lt;/li&gt;
+  &lt;li&gt;Integrating WiFi sensing and visual recognition
+Cross-modal learning&lt;/li&gt;
+  &lt;li&gt;reconstruct one modality from another modality
+Model robustness and security for trustworthy sensing&lt;/li&gt;
+  &lt;li&gt;Protect privacy and against adversarial attacks
+Complicated human activities and behaviors analytics&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="Projects" /><summary type="html">Wifi Sensing Literature Review The following is a presentation I gave to my research group on wifi sensing.</summary></entry><entry><title type="html">Le-Chord Fall Semester</title><link href="http://localhost:4000/projects/2022/12/01/Le-Chord-1.html" rel="alternate" type="text/html" title="Le-Chord Fall Semester" /><published>2022-12-01T00:51:39-08:00</published><updated>2022-12-01T00:51:39-08:00</updated><id>http://localhost:4000/projects/2022/12/01/Le-Chord-1</id><content type="html" xml:base="http://localhost:4000/projects/2022/12/01/Le-Chord-1.html">&lt;h1 id=&quot;le-chord---fall-2022&quot;&gt;Le Chord - Fall 2022&lt;/h1&gt;
+
+&lt;h4 id=&quot;the-omnichord-an-instrument-lost-to-time&quot;&gt;The Omnichord: An Instrument Lost to Time&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/LeChord/omnichord.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Over the last few years I have become increasingly interested in obscure musical instruments. One of my favorites is the Omnichord, an electronic instrument released in 1981 by the Suzuki Musical Instrument Corporation. The Omnichord was originally designed to be an electronic version of the autoharp, sometimes also referred to as a chord zither. To play the instrument you press a button corresponding to a chord, and “strum” a set of touch sensors to play each note in the chord. Over the past few decades the instrument has amassed a cult following, which has led its price on ebay to shoot through the roof!&lt;/p&gt;
+
+&lt;p&gt;Being a broke college student, buying an Omnichord is placed firmly out of reach. However, I have access to something other broke college students may not have, 60% of a degree in Computer Engineering, and a club where the whole point is to make random engineering projects!&lt;/p&gt;
+
+&lt;p&gt;I am now working on building an Omnichord like instrument with a group of people from makers.  The project is called “Le-Chord” because the foundation of the instrument is a midi-controller kit called “Le-strum”. Le-Strum is an open source Midi controller that contains similar controls to the Omnichord with 36 chord buttons, 6 string guitar mode, and a Stylus for “strumming”
+Having only completed 60% of a degree in computer engineering I don’t have quite the skills necessary to make an the instrument entirely in hardware, so instead we are combining the midi-controller and a raspberry pi (a small single board computer) into a single instrument.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/images/LeChord/leStrum1.jpg&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><category term="Projects" /><summary type="html">Le Chord - Fall 2022</summary></entry></feed>
