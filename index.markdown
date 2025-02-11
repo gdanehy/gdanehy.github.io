@@ -3,10 +3,6 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+
+title: Hello World :)
 ---
-
-Ahoy! I'm Georgia, Welcome to my website! 
-
-I am a Maker/Engineer based in the Bay area. I get excited about Technology, Urbanism, and obscure musical instruments!
-
-<img class="profile-img" src="/assets/images/GeorgiaDanehy.jpeg" alt="Georgia" title="Georgia" />
