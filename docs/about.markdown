@@ -5,7 +5,7 @@ permalink: /about/
 nav_header: true
 ---
 
-<img class="profile-img" src="/assets/images/GeorgiaDanehy.jpeg" alt="Georgia" title="Georgia" />
+<img src="/assets/images/GeorgiaDanehy.jpeg" alt="Georgia" title="Georgia" />
 
 Ahoy! I'm Georgia, Welcome to my website! 
 
