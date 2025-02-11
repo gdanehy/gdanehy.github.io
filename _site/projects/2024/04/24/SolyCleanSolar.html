@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, intial-scale=1">
+    
+    <title>Georgia Danehy</title>
+    <meta name="description" content="Georgia Danehy Resume and Portfolio">
+    <link rel="stylesheet" href="/assets/styles.css"></head>
+<body><input class="dark-mode-checkbox sr-only" id="dark-mode" type="checkbox">
+<input class="typo-plus-checkbox sr-only" id="typo-plus" type="checkbox">
+<input class="typo-dys-checkbox sr-only" id="typo-dys" type="checkbox">
+<div class="theme-container grow">
+<header>
+    <div class="site_title" role="heading" aria-level="1">
+      <a href="/" class="site-title">
+        Georgia Danehy
+      </a>
+    </div>
+  <nav>
+      
+      
+        
+      
+        
+            <a href="/about/" class="pages_links">
+              <span class="pages_names">About Me</span>
+            </a>
+        
+      
+        
+      
+        
+            <a href="/projects/" class="pages_links">
+              <span class="pages_names">Projects</span>
+            </a>
+        
+      
+        
+            <a href="/resume/" class="pages_links">
+              <span class="pages_names">Resume</span>
+            </a>
+        
+      
+        
+      
+        
+      
+  </nav>
+  <div class="site_functions">
+    
+    
+  </div>
+</header>
+<main class="page_content" aria-label="Content">
+      
+    <article> 
+  <h1 id="soly-clean-solar">Sol’y Clean Solar</h1>
+<p>A self cleaning solar panel system</p>
+
+<h3 id="context-solar-panels-get-dirty">Context: Solar panels get dirty</h3>
+<p>Soiling is the Process of dirt accumulating on panels and decreasing power. This can cause a 3-4% power drop, costing solar farms $5.5 billion dollars annually. The solution to this is cleaning solar panels, but this takes a lot of water. It takes 300,000 gallons per acre per year to clean a solar farm.</p>
+
+<h3 id="objective-make-a-self-cleaning-solar-panel">Objective: make a self cleaning solar panel</h3>
+<p><img src="/assets/images/SolyCleanSolar/systemDiagram.png" /></p>
+
+<h2 id="my-contributions-electrical-and-firmware">My Contributions: Electrical and Firmware</h2>
+<p>We wanted an IOT data monitoring system for the solar panel to track energy output and initiate cleaning when efficiency drops. I built one based on Open Green Energy’s [Solar Panel Monitoring System V2][inspo-link]. 
+The System tracks voltage, current, and temperature, and uploads it to a BLYNK web interface</p>
+
+<p><img src="/assets/images/SolyCleanSolar/breadbord.png" /></p>
+
+<p><img src="/assets/images/SolyCleanSolar/fullBreadboard.png" /></p>
+
+<p><img src="/assets/images/SolyCleanSolar/IMG_5353.jpeg" /></p>
+
+<p>I also designed the electrical system and wrote the firmware for controlling the pannel movement, so that the pannel could track the sun. This involved a lot of high power electronics, which was new for me. To control the linear actuators I used relays in an H-Bridge, and to control the central dc motor I used another relay plus a DC Motor Speed Controller Switch.
+<img src="/assets/images/SolyCleanSolar/Full Solar_system 2_bb.png" />
+<img src="/assets/images/SolyCleanSolar/motorController.jpg" />
+<img src="/assets/images/SolyCleanSolar/LinActControl.png" /></p>
+
+<p>Evidently I did not get any good pictures of the whole system, but here is what it kinda looked like:</p>
+
+<p><img src="/assets/images/SolyCleanSolar/IMG_5584.jpeg" /></p>
+
+
+<div class="post_footer">
+  <h2 class="list_post_info">
+      24 April 2024
+  </h2>
+</div>
+  <div class="line"></div>
+</article>
+
+
+    </main>      <footer>
+        
+      </footer>
+    </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const checkbox = document.querySelector('.dark-mode-checkbox');
+
+  checkbox.checked = localStorage.getItem('darkMode') === 'true';
+
+  checkbox.addEventListener('change', function (event) {
+    localStorage.setItem('darkMode', event.currentTarget.checked);
+  });
+});
+
+  document.addEventListener('DOMContentLoaded', function () {
+  const checkbox = document.querySelector('.typo-plus-checkbox');
+
+  checkbox.checked = localStorage.getItem('typoPlus') === 'true';
+
+  checkbox.addEventListener('change', function (event) {
+    localStorage.setItem('typoPlus', event.currentTarget.checked);
+  });
+});
+
+    document.addEventListener('DOMContentLoaded', function () {
+  const checkbox = document.querySelector('.typo-dys-checkbox');
+
+  checkbox.checked = localStorage.getItem('typoDys') === 'true';
+
+  checkbox.addEventListener('change', function (event) {
+    localStorage.setItem('typoDys', event.currentTarget.checked);
+  });
+});
+</script>
+</body>
+</html>

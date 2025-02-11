@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, intial-scale=1">
+    
+    <title>Georgia Danehy</title>
+    <meta name="description" content="Georgia Danehy Resume and Portfolio">
+    <link rel="stylesheet" href="/assets/styles.css"></head>
+<body><input class="dark-mode-checkbox sr-only" id="dark-mode" type="checkbox">
+<input class="typo-plus-checkbox sr-only" id="typo-plus" type="checkbox">
+<input class="typo-dys-checkbox sr-only" id="typo-dys" type="checkbox">
+<div class="theme-container grow">
+<header>
+    <div class="site_title" role="heading" aria-level="1">
+      <a href="/" class="site-title">
+        Georgia Danehy
+      </a>
+    </div>
+  <nav>
+      
+      
+        
+      
+        
+            <a href="/about/" class="pages_links">
+              <span class="pages_names">About Me</span>
+            </a>
+        
+      
+        
+      
+        
+            <a href="/projects/" class="pages_links">
+              <span class="pages_names">Projects</span>
+            </a>
+        
+      
+        
+            <a href="/resume/" class="pages_links">
+              <span class="pages_names">Resume</span>
+            </a>
+        
+      
+        
+      
+        
+      
+  </nav>
+  <div class="site_functions">
+    
+    
+  </div>
+</header>
+<main class="page_content" aria-label="Content">
+      
+    <article> 
+  <p><img class="profile-img" src="/assets/images/GeorgiaDanehy.jpeg" alt="Georgia" title="Georgia" /></p>
+
+<p>Ahoy! I’m Georgia, Welcome to my website!</p>
+
+<p>I am a Maker/Engineer based in the Bay area. I get excited about Technology, Urbanism, and obscure musical instruments!</p>
+
+<p>I graduated from USC in 2024 with a degree in Computer Engineering and Computer Science. At USC I was a member of <a href="https://viterbimakers.usc.edu/">Viterbi Makers</a>, an interdisciplinary Engineering organization where the goal is to make cool stuff! I joined makers during the first semester of my freshman year, and since then I have served on the executive board as the Director of Marketing and Director of internal operations, and as a Project Manager for one of our clubs many projects!</p>
+
+<p>I made this website to serve as a portfolio of all of my projects.</p>
+
+
+  <div class="line"></div>
+</article>
+
+
+    </main>      <footer>
+        
+      </footer>
+    </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const checkbox = document.querySelector('.dark-mode-checkbox');
+
+  checkbox.checked = localStorage.getItem('darkMode') === 'true';
+
+  checkbox.addEventListener('change', function (event) {
+    localStorage.setItem('darkMode', event.currentTarget.checked);
+  });
+});
+
+  document.addEventListener('DOMContentLoaded', function () {
+  const checkbox = document.querySelector('.typo-plus-checkbox');
+
+  checkbox.checked = localStorage.getItem('typoPlus') === 'true';
+
+  checkbox.addEventListener('change', function (event) {
+    localStorage.setItem('typoPlus', event.currentTarget.checked);
+  });
+});
+
+    document.addEventListener('DOMContentLoaded', function () {
+  const checkbox = document.querySelector('.typo-dys-checkbox');
+
+  checkbox.checked = localStorage.getItem('typoDys') === 'true';
+
+  checkbox.addEventListener('change', function (event) {
+    localStorage.setItem('typoDys', event.currentTarget.checked);
+  });
+});
+</script>
+</body>
+</html>

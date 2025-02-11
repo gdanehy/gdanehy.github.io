@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, intial-scale=1">
+    
+    <title>Georgia Danehy</title>
+    <meta name="description" content="Georgia Danehy Resume and Portfolio">
+    <link rel="stylesheet" href="/assets/styles.css"></head>
+<body><input class="dark-mode-checkbox sr-only" id="dark-mode" type="checkbox">
+<input class="typo-plus-checkbox sr-only" id="typo-plus" type="checkbox">
+<input class="typo-dys-checkbox sr-only" id="typo-dys" type="checkbox">
+<div class="theme-container grow">
+<header>
+    <div class="site_title" role="heading" aria-level="1">
+      <a href="/" class="site-title">
+        Georgia Danehy
+      </a>
+    </div>
+  <nav>
+      
+      
+        
+      
+        
+            <a href="/about/" class="pages_links">
+              <span class="pages_names">About Me</span>
+            </a>
+        
+      
+        
+      
+        
+            <a href="/projects/" class="pages_links">
+              <span class="pages_names">Projects</span>
+            </a>
+        
+      
+        
+            <a href="/resume/" class="pages_links">
+              <span class="pages_names">Resume</span>
+            </a>
+        
+      
+        
+      
+        
+      
+  </nav>
+  <div class="site_functions">
+    
+    
+  </div>
+</header>
+<main class="page_content" aria-label="Content">
+      
+    <article> 
+  <h1 id="le-chord---fall-2022">Le Chord - Fall 2022</h1>
+
+<h4 id="the-omnichord-an-instrument-lost-to-time">The Omnichord: An Instrument Lost to Time</h4>
+<p><img src="/assets/images/LeChord/omnichord.jpg" /></p>
+
+<p>Over the last few years I have become increasingly interested in obscure musical instruments. One of my favorites is the Omnichord, an electronic instrument released in 1981 by the Suzuki Musical Instrument Corporation. The Omnichord was originally designed to be an electronic version of the autoharp, sometimes also referred to as a chord zither. To play the instrument you press a button corresponding to a chord, and “strum” a set of touch sensors to play each note in the chord. Over the past few decades the instrument has amassed a cult following, which has led its price on ebay to shoot through the roof!</p>
+
+<p>Being a broke college student, buying an Omnichord is placed firmly out of reach. However, I have access to something other broke college students may not have, 60% of a degree in Computer Engineering, and a club where the whole point is to make random engineering projects!</p>
+
+<p>I am now working on building an Omnichord like instrument with a group of people from makers.  The project is called “Le-Chord” because the foundation of the instrument is a midi-controller kit called “Le-strum”. Le-Strum is an open source Midi controller that contains similar controls to the Omnichord with 36 chord buttons, 6 string guitar mode, and a Stylus for “strumming”
+Having only completed 60% of a degree in computer engineering I don’t have quite the skills necessary to make an the instrument entirely in hardware, so instead we are combining the midi-controller and a raspberry pi (a small single board computer) into a single instrument.</p>
+
+<p><img src="/assets/images/LeChord/leStrum1.jpg" /></p>
+
+
+
+<div class="post_footer">
+  <h2 class="list_post_info">
+      01 December 2022
+  </h2>
+</div>
+  <div class="line"></div>
+</article>
+
+
+    </main>      <footer>
+        
+      </footer>
+    </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const checkbox = document.querySelector('.dark-mode-checkbox');
+
+  checkbox.checked = localStorage.getItem('darkMode') === 'true';
+
+  checkbox.addEventListener('change', function (event) {
+    localStorage.setItem('darkMode', event.currentTarget.checked);
+  });
+});
+
+  document.addEventListener('DOMContentLoaded', function () {
+  const checkbox = document.querySelector('.typo-plus-checkbox');
+
+  checkbox.checked = localStorage.getItem('typoPlus') === 'true';
+
+  checkbox.addEventListener('change', function (event) {
+    localStorage.setItem('typoPlus', event.currentTarget.checked);
+  });
+});
+
+    document.addEventListener('DOMContentLoaded', function () {
+  const checkbox = document.querySelector('.typo-dys-checkbox');
+
+  checkbox.checked = localStorage.getItem('typoDys') === 'true';
+
+  checkbox.addEventListener('change', function (event) {
+    localStorage.setItem('typoDys', event.currentTarget.checked);
+  });
+});
+</script>
+</body>
+</html>
