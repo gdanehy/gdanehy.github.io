@@ -29,7 +29,8 @@ github_username:  gdanehy
 
 
 # Build settings
-theme: simply-cyan
+remote_theme: broccolini/swiss
+theme_color: yellow
 plugins:
   - jekyll-feed
 
