@@ -26,6 +26,12 @@ baseurl: "" # the subpath of your site, e.g. /blog
 domain: gdanehy.github.io       # if you want to force HTTPS, specify the domain without the http at the start, e.g. example.com
 url: https://gdanehy.github.io  # the base hostname and protocol for your site, e.g. http://example.com
 github_username:  gdanehy
+linkedin_url: https://www.linkedin.com/in/georgia-danehy/
+
+# Optional social link, you can choose from the following options:
+# twitter (default), instagram, medium, or dribbble
+# social_link: linkedin
+# social_username: georgia-danehy
 
 
 # Build settings
