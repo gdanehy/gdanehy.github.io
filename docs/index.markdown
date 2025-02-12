@@ -5,5 +5,6 @@
 layout: home
 ---
 
-Ahoy! I'm Georgia, Welcome to my website! 
+## Ahoy! I'm Georgia, Welcome to my website! 
+
 I am a Maker/Engineer based in the Bay area. I get excited about Technology, Urbanism, and obscure musical instruments!
