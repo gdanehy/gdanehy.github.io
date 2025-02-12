@@ -1,5 +1,5 @@
 ---
-layout: category_index
+layout: page
 title: Projects
 permalink: /projects/
 nav_header: true
