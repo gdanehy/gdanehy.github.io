@@ -11,11 +11,9 @@ nav_header: true
 
 ## EDUCATION  
 **University of Southern California**, Viterbi School of Engineering
-
-**BS, Computer Engineering and Computer Science** - Embedded Systems Track - August 2024
-
+**BS, Computer Engineering and Computer Science** 
+Embedded Systems Track | *(August 2024)*
 **Honors:** Trustee Full-Tuition Scholarship, Viterbi Fellow  
-
 **Organizations:** IEEE, SWE  
 
 ---
